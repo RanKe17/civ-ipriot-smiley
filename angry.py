@@ -3,12 +3,12 @@ from blinkable import Blinkable
 from smiley import Smiley
 
 
-class Happy(Smiley, Blinkable):
+class Angry(Smiley, Blinkable):
     """
    Provides a Smiley with a happy expression
     """
     def __init__(self):
-        super().__init__(complexion=self.YELLOW)
+        super().__init__(complexion=self.RED)
 
         # adding complexion statement
         self.complexion_colour = self.complexion()
@@ -25,7 +25,7 @@ class Happy(Smiley, Blinkable):
         # reassigning complexion colour because it doesn't like transferring across __init__
         if color is None:
             color = self.complexion_colour
-        mouth = [41, 46, 50, 51, 52, 53]
+        mouth = [42, 43, 44, 45, 50, 53]
         for pixel in mouth:
             self.pixels[pixel] = self.BLANK
 
@@ -40,7 +40,7 @@ class Happy(Smiley, Blinkable):
             color = self.complexion_colour
 
 
-        eyes = [10, 13, 18, 21]
+        eyes = [17, 18, 21, 22, 26, 29]
         for pixel in eyes:
             self.pixels[pixel] = self.BLANK if wide_open else self.complexion_colour
 

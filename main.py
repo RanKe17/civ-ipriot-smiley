@@ -6,8 +6,15 @@ import time
 
 from happy import Happy
 
+# new addition to ensure this works
+from sad import Sad
+from smiley import Smiley
+from angry import Angry
+
+
 def main():
-    smiley = Happy()
+    # changing happy to sad :( now back to happy
+    smiley = Angry()
 
     smiley.show()
 
